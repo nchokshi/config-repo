@@ -1,0 +1,32 @@
+#Commonly used properties => http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+enable.rabbitmq.messaging: false
+enable.rabbitmq.auto.listening: false
+fulfillmentRule.loadOnStartup: false
+
+spring:
+    profiles:
+        active: integration
+
+    datasource:
+        url: jdbc:jtds:sqlserver:/bacpadevsql.promad.com/IntegralCMJunitTests;instance=sql4;prepareSQL=0
+        username: pcm_durango
+        password: U2M$srm5
+        driver-class-name: net.sourceforge.jtds.jdbc.Driver
+        max-active: 50
+        max-idle: 10
+        min-idle: 10
+
+    datasource.keygen:
+        url: jdbc:jtds:sqlserver:/bacpadevsql.promad.com/IntegralCMJunitTests;instance=sql4;prepareSQL=0
+        username: pcm_durango
+        password: U2M$srm5
+        driver-class-name: net.sourceforge.jtds.jdbc.Driver
+        max-active: 10
+        max-idle: 10
+        min-idle: 10
+
+load.test.thread.count: 10
+load.test.candidate.count: 100
+load.test.formResult.count: 250
+load.test.ownerId: 45
+load.test.mode: continuous

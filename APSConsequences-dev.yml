@@ -1,0 +1,36 @@
+#Commonly used properties => http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+
+#This will enable message sending on rabbitmq server
+enable.rabbitmq.messaging: true
+#This will enable message receiving from rabbitmq server
+enable.rabbitmq.auto.listening: true
+#This will enable if need to load rules on app start
+fulfillmentRule.loadOnStartup: true
+
+spring:
+    profiles:
+        active: dev
+
+    datasource:
+        url: jdbc:jtds:sqlserver:/pcmdboltdev.vue.com:33508/durango
+        username: a_pcmdurango
+        encrypted_password: $ENC:H399bWzah0TnkyFvvaApAA==
+        driver-class-name: net.sourceforge.jtds.jdbc.Driver
+        max-active: 10 
+        max-idle: 8
+        min-idle: 8
+
+    datasource.keygen:
+        url: jdbc:jtds:sqlserver:/pcmdboltdev.vue.com:33508/durango
+        username: a_pcmdurango
+        encrypted_password: $ENC:H399bWzah0TnkyFvvaApAA==
+        driver-class-name: net.sourceforge.jtds.jdbc.Driver
+        max-active: 10
+        max-idle: 10
+        min-idle: 10
+
+    rabbitmq:
+      host: localhost
+      port: 5672
+      username: APSV2
+      encrypted_password: $ENC:/x/7NnEj5EYKqXZeiVdQXQ==

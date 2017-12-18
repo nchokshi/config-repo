@@ -1,0 +1,44 @@
+
+keygen.cache.size: 1000
+
+#This enables Rabbit messaging for Consequence
+enable.rabbitmq.messaging: true
+#This enables Rabbit messaging listening for Consequence
+enable.rabbitmq.auto.listening: true
+
+#This property will load all the fulfillment rules into on startup.
+fulfillmentRule.loadOnStartup: false
+#This property is defining the pool size for fulfillment rule Loading.
+fulfillmentruleLoader.pool-size: 10
+
+#ErrorHandler properties
+errorhandler.poll.time: 30000
+errorhandler.poll.updatecount: 10
+errorhandler.max.attempt.number: 6
+errorhandler.hours.algorithm.next: 4
+#enable this for resending failed Consequence messages.
+errorhandler.enable.auto.attempts: true
+
+spring:
+# rabbit config
+  rabbitmq:
+    sslProtocol: TLS1.2
+    channel-cache-size: 10
+    socketTimeout: 5
+    virtualHost: APSCandidate
+    cert-id-queue: HA-CertId
+    cert-id-count: 3
+    badges-queue: HA-Badges
+    badges-count: 5
+    fulfillment-queue: HA-Fulfillment
+    fulfillment-count: 10
+    confirm-enabled: true
+    exchange:
+      fanout-exchange-name: amq.fanout
+    ssl:
+      enabled: false
+
+server:
+  port: 8988
+
+candidatelock.transaction.timeout: 10

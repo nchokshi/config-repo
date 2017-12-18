@@ -1,0 +1,30 @@
+#Commonly used properties => http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+enable.rabbitmq.messaging: true
+enable.rabbitmq.auto.listening: false
+fulfillmentRule.loadOnStartup: false
+
+spring:
+    profiles:
+        active: unit
+
+    datasource:
+        schema: /data/unit/schema-h2.sql
+        data: /data/unit/data-h2.sql
+        separator: ;
+        url: jdbc:h2:mem:APSConsequencesUnit;USER=unittest;DB_CLOSE_ON_EXIT=FALSE;DATABASE_TO_UPPER=false
+        username: unittest
+        encrypted_password: $ENC:HWc8j38LLUKmN26lxg6yYg==
+        driver-class-name: org.h2.Driver
+        max-active: 10 
+        max-idle: 8
+        min-idle: 8
+        platform: h2
+        
+    datasource.keygen:
+        url: jdbc:h2:mem:APSConsequencesUnit;USER=unittest;DB_CLOSE_ON_EXIT=FALSE;DATABASE_TO_UPPER=false
+        username: unittest
+        encrypted_password: $ENC:HWc8j38LLUKmN26lxg6yYg==
+        driver-class-name: org.h2.Driver
+        max-active: 10
+        max-idle: 10
+        min-idle: 10

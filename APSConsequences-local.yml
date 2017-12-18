@@ -1,0 +1,27 @@
+enable.rabbitmq.messaging: false
+enable.rabbitmq.auto.listening: false
+
+spring:
+    profiles:
+        active: dev
+
+    datasource:
+        schema: /data/unit/schema-h2.sql
+        data: /data/unit/data-h2.sql
+        separator: ;
+        url: jdbc:h2:mem:APSConsequences;USER=inttest;DB_CLOSE_ON_EXIT=FALSE;DATABASE_TO_UPPER=false
+        username: inttest
+        encrypted_password: $ENC:HWc8j38LLUKmN26lxg6yYg==
+        driver-class-name: org.h2.Driver
+        max-active: 10
+        max-idle: 8
+        min-idle: 8
+
+     datasource.keygen:
+        url: jdbc:h2:mem:APSConsequences;USER=inttest;DB_CLOSE_ON_EXIT=FALSE;DATABASE_TO_UPPER=false
+        username: inttest
+        encrypted_password: $ENC:HWc8j38LLUKmN26lxg6yYg==
+        driver-class-name: org.h2.Driver
+        max-active: 10
+        max-idle: 8
+        min-idle: 8
